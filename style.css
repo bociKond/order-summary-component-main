@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+:root {
+  /* primary */
+  --blue-pale: hsl(225, 100%, 94%);
+  --blue-bright: hsl(245, 75%, 52%);
+
+  /* neutral */
+  --blue-very-pale: hsl(225, 100%, 98%);
+  --blue-desaturated: hsl(224, 23%, 55%);
+  --blue-dark: hsl(223, 47%, 23%);
+
+  --ff: "Red Hat Display", sans-serif;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-extra-bold: 900;
+
+  font-size: 1rem;
+}
+body {
+  background-image: url(/images/pattern-background-mobile.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--blue-pale);
+
+  font-family: var(--ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  max-width: 300px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: white;
+}
+
+.card-content {
+  padding: 1.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+h1 {
+  font-weight: var(--fw-extra-bold);
+  font-size: 1.5rem;
+}
+p {
+  font-size: 1rem;
+  color: var(--blue-desaturated);
+}
+.plan {
+  background-color: var(--blue-very-pale);
+  display: grid;
+  grid-template-columns: auto 1fr 25%;
+  place-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+}
+.plan-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.plan img {
+  height: 2.5rem;
+  aspect-ratio: 1/1;
+}
+.change {
+  color: var(--blue-bright);
+  transition: 300ms;
+}
+.bold {
+  font-weight: var(--fw-extra-bold);
+}
+.price {
+  color: var(--blue-desaturated);
+}
+
+.btn {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 0.9rem;
+  font-weight: bold;
+  border: none;
+  color: var(--blue-desaturated);
+  cursor: pointer;
+  transition: 300ms;
+}
+.btn-primary {
+  background-color: var(--blue-bright);
+  color: white;
+  box-shadow: 0 15px 30px rgb(56, 41, 224, 0.3);
+}
+
+/* responsiveness */
+@media screen and (width > 600px) {
+  body {
+    background-image: url(/images/pattern-background-desktop.svg);
+  }
+  .card{
+    max-width: 350px;
+  }
+  .card-content{
+    padding: 2rem;
+  }
+}
+
+/* hovers */
+
+.change:hover {
+  opacity: 0.8;
+}
+
+.btn:hover {
+  color: black;
+}
+.btn-primary:hover {
+  color: white;
+  opacity: 0.8;
+}
